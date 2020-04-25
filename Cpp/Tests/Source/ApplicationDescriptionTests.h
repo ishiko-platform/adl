@@ -13,6 +13,9 @@ class ApplicationDescriptionTests : public Ishiko::Tests::TestSequence
 {
 public:
     ApplicationDescriptionTests(const Ishiko::Tests::TestNumber& number, const Ishiko::Tests::TestEnvironment& environment);
+
+private:
+    static void ConstructorTest1(Ishiko::Tests::Test& test);
 };
 
 #endif
