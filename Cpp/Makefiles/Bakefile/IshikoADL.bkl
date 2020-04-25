@@ -6,7 +6,7 @@ library IshikoADL
 {
     archs = x86_64;
 
-    includedirs += ../../../Include/Ishiko/Platform/ADL/Cpp;
+    includedirs += ../../../Include/Cpp/Ishiko/Platform/ADL;
 
     outputdir = ../../../Lib/$(arch);
 
@@ -17,8 +17,8 @@ library IshikoADL
 
     headers
     {
-        ../../../Include/Ishiko/Platform/ADL/Cpp/linkoptions.h
-        ../../../Include/Ishiko/Platform/ADL/Cpp/ApplicationDescription.h
+        ../../../Include/Cpp/Ishiko/Platform/ADL/linkoptions.h
+        ../../../Include/Cpp/Ishiko/Platform/ADL/ApplicationDescription.h
     }
 
     sources

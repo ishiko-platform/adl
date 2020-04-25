@@ -55,7 +55,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>..\..\..\Include\Ishiko\Platform\ADL\Cpp</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\Include\Cpp\Ishiko\Platform\ADL</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -72,7 +72,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
-      <AdditionalIncludeDirectories>..\..\..\Include\Ishiko\Platform\ADL\Cpp</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\Include\Cpp\Ishiko\Platform\ADL</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -86,8 +86,8 @@
     <ClCompile Include="..\..\Source\ApplicationDescription.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Include\Ishiko\Platform\ADL\Cpp\linkoptions.h" />
-    <ClInclude Include="..\..\..\Include\Ishiko\Platform\ADL\Cpp\ApplicationDescription.h" />
+    <ClInclude Include="..\..\..\Include\Cpp\Ishiko\Platform\ADL\linkoptions.h" />
+    <ClInclude Include="..\..\..\Include\Cpp\Ishiko\Platform\ADL\ApplicationDescription.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
