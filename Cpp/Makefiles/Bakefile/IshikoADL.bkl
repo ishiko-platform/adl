@@ -18,5 +18,11 @@ library IshikoADL
     headers
     {
         ../../../Include/Ishiko/Platform/ADL/Cpp/linkoptions.h
+        ../../../Include/Ishiko/Platform/ADL/Cpp/ApplicationDescription.h
+    }
+
+    sources
+    {
+        ../../Source/ApplicationDescription.cpp
     }
 }

@@ -83,7 +83,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\ApplicationDescription.cpp" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="..\..\..\Include\Ishiko\Platform\ADL\Cpp\linkoptions.h" />
+    <ClInclude Include="..\..\..\Include\Ishiko\Platform\ADL\Cpp\ApplicationDescription.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
