@@ -13,6 +13,8 @@ int main(int argc, char* argv[])
 {
     TestHarness theTestHarness("IshikoADL");
 
+    theTestHarness.environment().setTestDataDirectory("../../TestData");
+
     TestSequence& theTests = theTestHarness.tests();
     theTests.append<ApplicationDescriptionTests>();
 
