@@ -9,8 +9,14 @@ program IshikoADLTests : IshikoTestFrameworkCore
 {
     archs = x86_64;
 
+    headers
+    {
+        ../../Source/ApplicationDescriptionTests.h
+    }
+
     sources
     {
         ../../Source/main.cpp
+        ../../Source/ApplicationDescriptionTests.cpp
     }
 }

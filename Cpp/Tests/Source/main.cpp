@@ -4,6 +4,7 @@
     See https://github.com/Ishiko-Platform/ADL/blob/master/LICENSE.txt
 */
 
+#include "ApplicationDescriptionTests.h"
 #include "Ishiko/TestFramework/TestFrameworkCore.h"
 
 using namespace Ishiko::Tests;
@@ -11,6 +12,9 @@ using namespace Ishiko::Tests;
 int main(int argc, char* argv[])
 {
     TestHarness theTestHarness("IshikoADL");
+
+    TestSequence& theTests = theTestHarness.tests();
+    theTests.append<ApplicationDescriptionTests>();
 
     return theTestHarness.run();
 }
