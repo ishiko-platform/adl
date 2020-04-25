@@ -17,6 +17,6 @@ library IshikoADL
 
     headers
     {
-        ../../../Include/Ishiko/Platform/wxWidgetsEngine/CLIExtension/linkoptions.h
+        ../../../Include/Ishiko/Platform/ADL/Cpp/linkoptions.h
     }
 }

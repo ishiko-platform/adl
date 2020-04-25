@@ -17,7 +17,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Include\Ishiko\Platform\wxWidgetsEngine\CLIExtension\linkoptions.h">
+    <ClInclude Include="..\..\..\Include\Ishiko\Platform\ADL\Cpp\linkoptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
