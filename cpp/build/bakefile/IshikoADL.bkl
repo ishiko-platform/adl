@@ -1,14 +1,24 @@
-toolsets = vs2017;
+toolsets = gnu vs2017;
 
+gnu.makefile = ../gnumake/GNUmakefile;
 vs2017.solutionfile = ../vc15/IshikoADL.sln;
 
 library IshikoADL
 {
-    archs = x86_64;
+    archs = x86 x86_64;
 
     includedirs += ../../include/Ishiko/Platform/ADL;
 
-    outputdir = ../../lib/$(arch);
+    if ($(toolset) == gnu)
+    {
+        cxx-compiler-options = "-std=c++11";
+        outputdir = ../../lib;
+    }
+
+    if ($(toolset) != gnu)
+    {
+        outputdir = ../../lib/$(arch);
+    }
 
     if ($(config) == Debug)
     {
