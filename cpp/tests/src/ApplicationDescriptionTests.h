@@ -1,13 +1,13 @@
 /*
-    Copyright (c) 2020 Xavier Leclercq
+    Copyright (c) 2020-2021 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/Ishiko-Platform/ADL/blob/master/LICENSE.txt
+    See https://github.com/ishiko-platform/adl/blob/main/LICENSE.txt
 */
 
 #ifndef _ISHIKO_TEST_PLATFORM_ADL_CPP_APPLICATIONDESCRIPTION_H_
 #define _ISHIKO_TEST_PLATFORM_ADL_CPP_APPLICATIONDESCRIPTION_H_
 
-#include "Ishiko/TestFramework/TestFrameworkCore.h"
+#include <Ishiko/Tests.h>
 
 class ApplicationDescriptionTests : public Ishiko::Tests::TestSequence
 {

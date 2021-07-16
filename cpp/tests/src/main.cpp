@@ -1,11 +1,11 @@
 /*
-    Copyright (c) 2020 Xavier Leclercq
+    Copyright (c) 2020-2021 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/Ishiko-Platform/ADL/blob/master/LICENSE.txt
+    See https://github.com/ishiko-platform/adl/blob/main/LICENSE.txt
 */
 
 #include "ApplicationDescriptionTests.h"
-#include "Ishiko/TestFramework/TestFrameworkCore.h"
+#include <Ishiko/Tests.h>
 
 using namespace Ishiko::Tests;
 
@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
 {
     TestHarness theTestHarness("IshikoADL");
 
-    theTestHarness.environment().setTestDataDirectory("../../TestData");
+    theTestHarness.environment().setTestDataDirectory("../../data");
 
     TestSequence& theTests = theTestHarness.tests();
     theTests.append<ApplicationDescriptionTests>();
