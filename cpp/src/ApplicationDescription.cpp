@@ -1,11 +1,10 @@
 /*
-    Copyright (c) 2020 Xavier Leclercq
+    Copyright (c) 2020-2021 Xavier Leclercq
     Released under the MIT License
-    See https://github.com/Ishiko-Platform/ADL/blob/master/LICENSE.txt
+    See https://github.com/ishiko-platform/adl/blob/main/LICENSE.txt
 */
 
 #include "ApplicationDescription.h"
-#include "yaml-cpp/yaml.h"
 
 namespace Ishiko
 {
@@ -20,8 +19,6 @@ ApplicationDescription::ApplicationDescription(const std::string& applicatioName
 ApplicationDescription ApplicationDescription::CreateFromFile(const std::string& path)
 {
     ApplicationDescription result;
-    YAML::Node config = YAML::LoadFile(path);
-    result.m_applicationName = config["application"]["name"].as<std::string>();
     return result;
 }
 
