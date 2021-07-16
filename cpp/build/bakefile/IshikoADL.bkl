@@ -1,17 +1,14 @@
-ishikopath = envvar("ISHIKO");
-import $(ishikopath)/ThirdPartyGlue/Include/Ishiko/yaml-cpp.bkl;
-
 toolsets = vs2017;
 
 vs2017.solutionfile = ../VC15/IshikoADL.sln;
 
-library IshikoADL : yaml-cpp
+library IshikoADL
 {
     archs = x86_64;
 
-    includedirs += ../../../Include/Cpp/Ishiko/Platform/ADL;
+    includedirs += ../../include/Ishiko/Platform/ADL;
 
-    outputdir = ../../../Lib/$(arch);
+    outputdir = ../../../lib/$(arch);
 
     if ($(config) == Debug)
     {
@@ -20,12 +17,12 @@ library IshikoADL : yaml-cpp
 
     headers
     {
-        ../../../Include/Cpp/Ishiko/Platform/ADL/linkoptions.h
-        ../../../Include/Cpp/Ishiko/Platform/ADL/ApplicationDescription.h
+        ../../include/Ishiko/Platform/ADL/ApplicationDescription.h
+        ../../include/Ishiko/Platform/ADL/linkoptions.h
     }
 
     sources
     {
-        ../../Source/ApplicationDescription.cpp
+        ../../src/ApplicationDescription.cpp
     }
 }
