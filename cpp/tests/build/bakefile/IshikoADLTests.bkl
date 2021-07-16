@@ -15,7 +15,7 @@ program IshikoADLTests : IshikoADL, IshikoTests
     if ($(toolset) == gnu)
     {
         cxx-compiler-options = "-std=c++11";
-        libs += IshikoTests;
+        libs += IshikoTests IshikoProcess;
     }
 
     headers
