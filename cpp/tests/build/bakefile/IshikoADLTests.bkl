@@ -1,24 +1,24 @@
 ishikoplatformpath = envvar("ISHIKO_PLATFORM");
-import $(ishikoplatformpath)/ADL/Include/Cpp/Ishiko/Platform/IshikoADL.bkl;
-ishikopath = envvar("ISHIKO");
-import $(ishikopath)/TestFramework/Include/Ishiko/TestFramework/TestFrameworkCore.bkl;
+import $(ishikoplatformpath)/adl/cpp/include/Ishiko/Platform/ADL.bkl;
+ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/tests/include/Ishiko/Tests.bkl;
 
 toolsets = vs2017;
 
 vs2017.solutionfile = ../VC15/IshikoADLTests.sln;
 
-program IshikoADLTests : IshikoADL, IshikoTestFrameworkCore
+program IshikoADLTests : IshikoADL, IshikoTests
 {
     archs = x86_64;
 
     headers
     {
-        ../../Source/ApplicationDescriptionTests.h
+        ../../src/ApplicationDescriptionTests.h
     }
 
     sources
     {
-        ../../Source/main.cpp
-        ../../Source/ApplicationDescriptionTests.cpp
+        ../../src/ApplicationDescriptionTests.cpp
+        ../../src/main.cpp
     }
 }
