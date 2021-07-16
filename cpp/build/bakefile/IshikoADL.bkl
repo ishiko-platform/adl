@@ -1,0 +1,38 @@
+toolsets = gnu vs2017;
+
+gnu.makefile = ../gnumake/GNUmakefile;
+vs2017.solutionfile = ../vc15/IshikoADL.sln;
+
+library IshikoADL
+{
+    archs = x86 x86_64;
+
+    includedirs += ../../include/Ishiko/Platform/ADL;
+
+    if ($(toolset) == gnu)
+    {
+        cxx-compiler-options = "-std=c++11";
+        outputdir = ../../lib;
+    }
+
+    if ($(toolset) != gnu)
+    {
+        outputdir = ../../lib/$(arch);
+    }
+
+    if ($(config) == Debug)
+    {
+        basename = IshikoADL-d;
+    }
+
+    headers
+    {
+        ../../include/Ishiko/Platform/ADL/ApplicationDescription.h
+        ../../include/Ishiko/Platform/ADL/linkoptions.h
+    }
+
+    sources
+    {
+        ../../src/ApplicationDescription.cpp
+    }
+}
