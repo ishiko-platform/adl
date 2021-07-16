@@ -1,0 +1,12 @@
+setting ISHIKO_PLATFORM_ADL_ROOT
+{
+    help = "Path to the Ishiko Platform ADL installation";
+    default = '$(ISHIKO_PLATFORM)/adl';
+}
+
+template IshikoADL
+{
+    includedirs += $(ISHIKO_PLATFORM_ADL_ROOT)/cpp/include;
+
+    libdirs += $(ISHIKO_PLATFORM_ADL_ROOT)/cpp/lib/$(arch);
+}
