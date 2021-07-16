@@ -5,7 +5,7 @@ import $(ishikopath)/tests/include/Ishiko/Tests.bkl;
 
 toolsets = vs2017;
 
-vs2017.solutionfile = ../VC15/IshikoADLTests.sln;
+vs2017.solutionfile = ../vc15/IshikoADLTests.sln;
 
 program IshikoADLTests : IshikoADL, IshikoTests
 {

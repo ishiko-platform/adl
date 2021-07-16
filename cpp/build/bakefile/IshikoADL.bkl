@@ -8,7 +8,7 @@ library IshikoADL
 
     includedirs += ../../include/Ishiko/Platform/ADL;
 
-    outputdir = ../../../lib/$(arch);
+    outputdir = ../../lib/$(arch);
 
     if ($(config) == Debug)
     {
