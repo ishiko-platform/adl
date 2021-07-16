@@ -3,13 +3,20 @@ import $(ishikoplatformpath)/adl/cpp/include/Ishiko/Platform/ADL.bkl;
 ishikopath = envvar("ISHIKO_CPP");
 import $(ishikopath)/tests/include/Ishiko/Tests.bkl;
 
-toolsets = vs2017;
+toolsets = gnu vs2017;
 
+gnu.makefile = ../gnumake/GNUmakefile;
 vs2017.solutionfile = ../vc15/IshikoADLTests.sln;
 
 program IshikoADLTests : IshikoADL, IshikoTests
 {
-    archs = x86_64;
+    archs = x86 x86_64;
+
+    if ($(toolset) == gnu)
+    {
+        cxx-compiler-options = "-std=c++11";
+        libs += IshikoTests;
+    }
 
     headers
     {
