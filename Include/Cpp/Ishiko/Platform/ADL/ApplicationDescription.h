@@ -18,8 +18,12 @@ class ApplicationDescription
 {
 public:
     explicit ApplicationDescription(const std::string& applicatioName);
+    static ApplicationDescription CreateFromFile(const std::string& path);
 
     const std::string& applicationName() const;
+
+private:
+    ApplicationDescription() = default;
 
 private:
     std::string m_applicationName;

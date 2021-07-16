@@ -1,8 +1,11 @@
+ishikopath = envvar("ISHIKO");
+import $(ishikopath)/ThirdPartyGlue/Include/Ishiko/yaml-cpp.bkl;
+
 toolsets = vs2017;
 
 vs2017.solutionfile = ../VC15/IshikoADL.sln;
 
-library IshikoADL
+library IshikoADL : yaml-cpp
 {
     archs = x86_64;
 

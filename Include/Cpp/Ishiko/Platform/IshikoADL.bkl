@@ -1,10 +1,13 @@
+ishikopath = envvar("ISHIKO");
+import $(ishikopath)/ThirdPartyGlue/Include/Ishiko/yaml-cpp.bkl;
+
 setting ISHIKO_PLATFORM_ADL_ROOT
 {
     help = "Path to the Ishiko Platform ADL installation";
     default = '$(ISHIKO_PLATFORM)/ADL';
 }
 
-template IshikoADL
+template IshikoADL : yaml-cpp
 {
     includedirs += $(ISHIKO_PLATFORM_ADL_ROOT)/Include/Cpp;
 
