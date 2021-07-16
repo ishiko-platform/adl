@@ -1,6 +1,6 @@
 toolsets = vs2017;
 
-vs2017.solutionfile = ../VC15/IshikoADL.sln;
+vs2017.solutionfile = ../vc15/IshikoADL.sln;
 
 library IshikoADL
 {
