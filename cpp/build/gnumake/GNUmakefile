@@ -56,12 +56,15 @@ $(if $(_builddir_error),$(error Failed to create build directory: $(_builddir_er
 endif
 all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoADL-d,IshikoADL).a
 
-../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoADL-d,IshikoADL).a: $(_builddir)IshikoADL_ApplicationDescription.o
-	$(AR) rc $@ $(_builddir)IshikoADL_ApplicationDescription.o
+../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoADL-d,IshikoADL).a: $(_builddir)IshikoADL_ApplicationDescription.o $(_builddir)IshikoADL_ApplicationDescriptionParser.o
+	$(AR) rc $@ $(_builddir)IshikoADL_ApplicationDescription.o $(_builddir)IshikoADL_ApplicationDescriptionParser.o
 	$(RANLIB) $@
 
 $(_builddir)IshikoADL_ApplicationDescription.o: ../../src/ApplicationDescription.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/Platform/ADL -std=c++11 ../../src/ApplicationDescription.cpp
+
+$(_builddir)IshikoADL_ApplicationDescriptionParser.o: ../../src/ApplicationDescriptionParser.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/Platform/ADL -std=c++11 ../../src/ApplicationDescriptionParser.cpp
 
 clean:
 	rm -f $(_builddir)*.o
