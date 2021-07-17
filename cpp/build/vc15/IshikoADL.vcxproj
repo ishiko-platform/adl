@@ -154,6 +154,7 @@
     <ClCompile Include="..\..\src\ApplicationDescriptionParser.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\Ishiko\Platform\ADL.h" />
     <ClInclude Include="..\..\include\Ishiko\Platform\ADL\ApplicationDescription.h" />
     <ClInclude Include="..\..\include\Ishiko\Platform\ADL\ApplicationDescriptionParser.h" />
     <ClInclude Include="..\..\include\Ishiko\Platform\ADL\linkoptions.h" />

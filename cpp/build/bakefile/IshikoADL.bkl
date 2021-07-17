@@ -27,6 +27,7 @@ library IshikoADL
 
     headers
     {
+        ../../include/Ishiko/Platform/ADL.h
         ../../include/Ishiko/Platform/ADL/ApplicationDescription.h
         ../../include/Ishiko/Platform/ADL/ApplicationDescriptionParser.h
         ../../include/Ishiko/Platform/ADL/linkoptions.h

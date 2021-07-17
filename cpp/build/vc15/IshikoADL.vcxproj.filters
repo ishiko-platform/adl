@@ -17,6 +17,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\Ishiko\Platform\ADL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\Ishiko\Platform\ADL\ApplicationDescription.h">
       <Filter>Header Files</Filter>
     </ClInclude>
