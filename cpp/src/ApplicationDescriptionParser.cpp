@@ -20,11 +20,19 @@ void ApplicationDescriptionParser::open(const boost::filesystem::path& filename,
 
 ApplicationDescription ApplicationDescriptionParser::parseApplicationDescription(Error& error)
 {
+    std::string applicationName;
+
     ApplicationDescriptionToken token = m_tokenizer.readNextToken(error);
     if (token.isKeyword())
     {
         if (token.value() == "app")
         {
+            token = m_tokenizer.readNextToken(error);
+            token = m_tokenizer.readNextToken(error);
+            if (token.isName())
+            {
+                applicationName = token.value();
+            }
         }
         else
         {
@@ -36,7 +44,7 @@ ApplicationDescription ApplicationDescriptionParser::parseApplicationDescription
         Fail(error, ErrorCategory::generic);
     }
 
-    return ApplicationDescription("");
+    return ApplicationDescription(applicationName);
 }
 
 }

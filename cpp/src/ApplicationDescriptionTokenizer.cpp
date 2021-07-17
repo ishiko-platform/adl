@@ -49,15 +49,32 @@ ApplicationDescriptionToken ApplicationDescriptionTokenizer::readNextToken(Error
     if (ASCII::IsAlpha(*it))
     {
         ++it;
-        while ((it != m_currentLine.end()) && ASCII::IsAlpha(*it))
+        while ((it != m_currentLine.end()) && ASCII::IsAlphanumeric(*it))
         {
             ++it;
         }
         std::string token(m_currentLineIt, it);
         if (token == "app")
         {
+            m_currentLineIt = it;
             return ApplicationDescriptionToken(ApplicationDescriptionToken::keyword, token);
         }
+        else
+        {
+            m_currentLineIt = it;
+            return ApplicationDescriptionToken(ApplicationDescriptionToken::name, token);
+        }
+    }
+    else if (ASCII::IsWhitespace(*it))
+    {
+        ++it;
+        while ((it != m_currentLine.end()) && ASCII::IsWhitespace(*it))
+        {
+            ++it;
+        }
+        std::string token(m_currentLineIt, it);
+        m_currentLineIt = it;
+        return ApplicationDescriptionToken(ApplicationDescriptionToken::whitespace, token);
     }
     else
     {

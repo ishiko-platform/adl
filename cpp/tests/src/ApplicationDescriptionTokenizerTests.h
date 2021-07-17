@@ -19,6 +19,7 @@ private:
     static void ConstructorTest1(Ishiko::Tests::Test& test);
     static void OpenTest1(Ishiko::Tests::Test& test);
     static void ReadNextTokenTest1(Ishiko::Tests::Test& test);
+    static void ReadNextTokenTest2(Ishiko::Tests::Test& test);
 };
 
 #endif

@@ -21,6 +21,8 @@ public:
     {
         invalid,
         keyword,
+        name,
+        whitespace,
         eof
     };
 
@@ -28,6 +30,7 @@ public:
 
     Type type() const;
     bool isKeyword() const;
+    bool isName() const;
     bool isEOF() const;
 
     const std::string& value() const;
