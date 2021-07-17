@@ -38,8 +38,9 @@ library IshikoADL : IshikoFileSystem, IshikoText, IshikoErrors, Boost
         ../../include/Ishiko/Platform/ADL/ApplicationDescriptionParser.h
         ../../include/Ishiko/Platform/ADL/ApplicationDescriptionToken.h
         ../../include/Ishiko/Platform/ADL/ApplicationDescriptionTokenizer.h
-        ../../include/Ishiko/Platform/ADL/ErrorCategory.h
         ../../include/Ishiko/Platform/ADL/linkoptions.h
+
+        ../../src/ErrorCategory.h
     }
 
     sources

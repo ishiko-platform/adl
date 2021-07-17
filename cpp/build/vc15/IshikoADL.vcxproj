@@ -162,8 +162,8 @@
     <ClInclude Include="..\..\include\Ishiko\Platform\ADL\ApplicationDescriptionParser.h" />
     <ClInclude Include="..\..\include\Ishiko\Platform\ADL\ApplicationDescriptionToken.h" />
     <ClInclude Include="..\..\include\Ishiko\Platform\ADL\ApplicationDescriptionTokenizer.h" />
-    <ClInclude Include="..\..\include\Ishiko\Platform\ADL\ErrorCategory.h" />
     <ClInclude Include="..\..\include\Ishiko\Platform\ADL\linkoptions.h" />
+    <ClInclude Include="..\..\src\ErrorCategory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

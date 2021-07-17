@@ -32,10 +32,10 @@
     <ClInclude Include="..\..\include\Ishiko\Platform\ADL\ApplicationDescriptionTokenizer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\Platform\ADL\ErrorCategory.h">
+    <ClInclude Include="..\..\include\Ishiko\Platform\ADL\linkoptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\Ishiko\Platform\ADL\linkoptions.h">
+    <ClInclude Include="..\..\src\ErrorCategory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
