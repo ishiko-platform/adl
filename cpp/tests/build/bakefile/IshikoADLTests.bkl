@@ -15,7 +15,7 @@ program IshikoADLTests : IshikoADL, IshikoTests
     if ($(toolset) == gnu)
     {
         cxx-compiler-options = "-std=c++11";
-        libs += IshikoADL IshikoTests IshikoProcess boost_filesystem;
+        libs += IshikoADL IshikoTests IshikoProcess IshikoText IshikoErrors boost_filesystem;
     }
 
     headers
