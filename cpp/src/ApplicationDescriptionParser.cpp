@@ -5,3 +5,21 @@
 */
 
 #include "ApplicationDescriptionParser.h"
+
+namespace Ishiko
+{
+namespace Platform
+{
+    
+void ApplicationDescriptionParser::open(const boost::filesystem::path& filename, Error& error)
+{
+    m_file.open(filename.string(), error);
+}
+
+ApplicationDescription ApplicationDescriptionParser::parseApplicationDescription()
+{
+    return ApplicationDescription("");
+}
+
+}
+}

@@ -1,9 +1,14 @@
+ishikopath = envvar("ISHIKO_CPP");
+import $(ishikopath)/errors/include/Ishiko/Errors.bkl;
+import $(ishikopath)/filesystem/include/Ishiko/FileSystem.bkl;
+import $(ishikopath)/third-party-glue/include/Ishiko/ThirdParty/Boost.bkl;
+
 toolsets = gnu vs2017;
 
 gnu.makefile = ../gnumake/GNUmakefile;
 vs2017.solutionfile = ../vc15/IshikoADL.sln;
 
-library IshikoADL
+library IshikoADL : IshikoFileSystem, IshikoErrors, Boost
 {
     archs = x86 x86_64;
 
