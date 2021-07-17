@@ -5,3 +5,16 @@
 */
 
 #include "ApplicationDescriptionTokenizer.h"
+
+namespace Ishiko
+{
+namespace Platform
+{
+    
+void ApplicationDescriptionTokenizer::open(const boost::filesystem::path& filename, Error& error)
+{
+    m_file.open(filename.string(), error);
+}
+
+}
+}

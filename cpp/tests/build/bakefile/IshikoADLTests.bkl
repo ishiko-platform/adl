@@ -22,12 +22,14 @@ program IshikoADLTests : IshikoADL, IshikoTests
     {
         ../../src/ApplicationDescriptionParserTests.h
         ../../src/ApplicationDescriptionTests.h
+        ../../src/ApplicationDescriptionTokenizerTests.h
     }
 
     sources
     {
         ../../src/ApplicationDescriptionParserTests.cpp
         ../../src/ApplicationDescriptionTests.cpp
+        ../../src/ApplicationDescriptionTokenizerTests.cpp
         ../../src/main.cpp
     }
 }

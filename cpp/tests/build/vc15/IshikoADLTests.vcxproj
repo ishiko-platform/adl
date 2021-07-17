@@ -154,11 +154,13 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\ApplicationDescriptionParserTests.cpp" />
     <ClCompile Include="..\..\src\ApplicationDescriptionTests.cpp" />
+    <ClCompile Include="..\..\src\ApplicationDescriptionTokenizerTests.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\ApplicationDescriptionParserTests.h" />
     <ClInclude Include="..\..\src\ApplicationDescriptionTests.h" />
+    <ClInclude Include="..\..\src\ApplicationDescriptionTokenizerTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -7,4 +7,25 @@
 #ifndef _ISHIKO_PLATFORM_ADL_CPP_APPLICATIONDESCRIPTIONTOKENIZER_H_
 #define _ISHIKO_PLATFORM_ADL_CPP_APPLICATIONDESCRIPTIONTOKENIZER_H_
 
+#include <boost/filesystem.hpp>
+#include <Ishiko/Errors.h>
+#include <Ishiko/FileSystem.h>
+
+namespace Ishiko
+{
+namespace Platform
+{
+
+class ApplicationDescriptionTokenizer
+{
+public:
+    void open(const boost::filesystem::path& filename, Error& error);
+
+private:
+    FileSystem::TextFile m_file;
+};
+
+}
+}
+
 #endif

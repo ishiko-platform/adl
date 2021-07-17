@@ -6,6 +6,7 @@
 
 #include "ApplicationDescriptionParserTests.h"
 #include "ApplicationDescriptionTests.h"
+#include "ApplicationDescriptionTokenizerTests.h"
 #include "Ishiko/Platform/ADL/linkoptions.h"
 #include <Ishiko/Tests.h>
 
@@ -18,6 +19,7 @@ int main(int argc, char* argv[])
     theTestHarness.environment().setTestDataDirectory("../../data");
 
     TestSequence& theTests = theTestHarness.tests();
+    theTests.append<ApplicationDescriptionTokenizerTests>();
     theTests.append<ApplicationDescriptionParserTests>();
     theTests.append<ApplicationDescriptionTests>();
 

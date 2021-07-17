@@ -92,14 +92,17 @@ ISHIKO_CPP_TESTS_ROOT ?= $(ISHIKO_CPP)/tests
 
 all: $(_builddir)IshikoADLTests
 
-$(_builddir)IshikoADLTests: $(_builddir)IshikoADLTests_ApplicationDescriptionParserTests.o $(_builddir)IshikoADLTests_ApplicationDescriptionTests.o $(_builddir)IshikoADLTests_main.o
-	$(CXX) -o $@ $(LDFLAGS) $(_builddir)IshikoADLTests_ApplicationDescriptionParserTests.o $(_builddir)IshikoADLTests_ApplicationDescriptionTests.o $(_builddir)IshikoADLTests_main.o -L$(ISHIKO_PLATFORM_ADL_ROOT)/cpp/lib -L$(ISHIKO_CPP_ERRORS_ROOT)/lib -L$(ISHIKO_CPP_BOOST_ROOT)/lib -L$(ISHIKO_CPP_FILESYSTEM_ROOT)/lib -L$(ISHIKO_CPP_TEXT_ROOT)/lib -L$(ISHIKO_CPP_TYPES_ROOT)/lib -L$(ISHIKO_CPP_DIFF_ROOT)/lib -L$(ISHIKO_CPP_PROCESS_ROOT)/lib -L$(ISHIKO_CPP_TESTS_ROOT)/lib -lIshikoADL -lIshikoTests -lIshikoProcess -lboost_filesystem -pthread
+$(_builddir)IshikoADLTests: $(_builddir)IshikoADLTests_ApplicationDescriptionParserTests.o $(_builddir)IshikoADLTests_ApplicationDescriptionTests.o $(_builddir)IshikoADLTests_ApplicationDescriptionTokenizerTests.o $(_builddir)IshikoADLTests_main.o
+	$(CXX) -o $@ $(LDFLAGS) $(_builddir)IshikoADLTests_ApplicationDescriptionParserTests.o $(_builddir)IshikoADLTests_ApplicationDescriptionTests.o $(_builddir)IshikoADLTests_ApplicationDescriptionTokenizerTests.o $(_builddir)IshikoADLTests_main.o -L$(ISHIKO_PLATFORM_ADL_ROOT)/cpp/lib -L$(ISHIKO_CPP_ERRORS_ROOT)/lib -L$(ISHIKO_CPP_BOOST_ROOT)/lib -L$(ISHIKO_CPP_FILESYSTEM_ROOT)/lib -L$(ISHIKO_CPP_TEXT_ROOT)/lib -L$(ISHIKO_CPP_TYPES_ROOT)/lib -L$(ISHIKO_CPP_DIFF_ROOT)/lib -L$(ISHIKO_CPP_PROCESS_ROOT)/lib -L$(ISHIKO_CPP_TESTS_ROOT)/lib -lIshikoADL -lIshikoTests -lIshikoProcess -lboost_filesystem -pthread
 
 $(_builddir)IshikoADLTests_ApplicationDescriptionParserTests.o: ../../src/ApplicationDescriptionParserTests.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_PLATFORM_ADL_ROOT)/cpp/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_TESTS_ROOT)/include -std=c++11 ../../src/ApplicationDescriptionParserTests.cpp
 
 $(_builddir)IshikoADLTests_ApplicationDescriptionTests.o: ../../src/ApplicationDescriptionTests.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_PLATFORM_ADL_ROOT)/cpp/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_TESTS_ROOT)/include -std=c++11 ../../src/ApplicationDescriptionTests.cpp
+
+$(_builddir)IshikoADLTests_ApplicationDescriptionTokenizerTests.o: ../../src/ApplicationDescriptionTokenizerTests.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_PLATFORM_ADL_ROOT)/cpp/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_TESTS_ROOT)/include -std=c++11 ../../src/ApplicationDescriptionTokenizerTests.cpp
 
 $(_builddir)IshikoADLTests_main.o: ../../src/main.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread -I$(ISHIKO_PLATFORM_ADL_ROOT)/cpp/include -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I$(ISHIKO_CPP_TYPES_ROOT)/include -I$(ISHIKO_CPP_DIFF_ROOT)/include -I$(ISHIKO_CPP_PROCESS_ROOT)/include -I$(ISHIKO_CPP_TESTS_ROOT)/include -std=c++11 ../../src/main.cpp
