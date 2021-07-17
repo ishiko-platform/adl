@@ -9,7 +9,9 @@
 
 #include "ADL/ApplicationDescription.h"
 #include "ADL/ApplicationDescriptionParser.h"
+#include "ADL/ApplicationDescriptionToken.h"
 #include "ADL/ApplicationDescriptionTokenizer.h"
+#include "ADL/ErrorCategory.h"
 
 #include "linkoptions.h"
 

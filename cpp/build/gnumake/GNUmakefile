@@ -41,6 +41,7 @@ endif
 #      ISHIKO_CPP_PLATFORM_ROOT    Path to the Ishiko Platform installation
 #      ISHIKO_CPP_BOOST_ROOT       Path to the Boost installation
 #      ISHIKO_CPP_FILESYSTEM_ROOT  Path to the Ishiko FileSystem installation
+#      ISHIKO_CPP_TEXT_ROOT        Path to the Ishiko/Text installation
 
 # Use "make RANLIB=''" for platforms without ranlib.
 RANLIB ?= ranlib
@@ -75,23 +76,31 @@ ISHIKO_CPP_PLATFORM_ROOT ?= $(ISHIKO_CPP)/platform
 ISHIKO_CPP_BOOST_ROOT ?= $(ISHIKO_CPP_THIRD_PARTY_BOOST)
 # Path to the Ishiko FileSystem installation
 ISHIKO_CPP_FILESYSTEM_ROOT ?= $(ISHIKO_CPP)/filesystem
+# Path to the Ishiko/Text installation
+ISHIKO_CPP_TEXT_ROOT ?= $(ISHIKO_CPP)/text
 
 # ------------
 
 all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoADL-d,IshikoADL).a
 
-../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoADL-d,IshikoADL).a: $(_builddir)IshikoADL_ApplicationDescription.o $(_builddir)IshikoADL_ApplicationDescriptionParser.o $(_builddir)IshikoADL_ApplicationDescriptionTokenizer.o
-	$(AR) rc $@ $(_builddir)IshikoADL_ApplicationDescription.o $(_builddir)IshikoADL_ApplicationDescriptionParser.o $(_builddir)IshikoADL_ApplicationDescriptionTokenizer.o
+../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoADL-d,IshikoADL).a: $(_builddir)IshikoADL_ApplicationDescription.o $(_builddir)IshikoADL_ApplicationDescriptionParser.o $(_builddir)IshikoADL_ApplicationDescriptionToken.o $(_builddir)IshikoADL_ApplicationDescriptionTokenizer.o $(_builddir)IshikoADL_ErrorCategory.o
+	$(AR) rc $@ $(_builddir)IshikoADL_ApplicationDescription.o $(_builddir)IshikoADL_ApplicationDescriptionParser.o $(_builddir)IshikoADL_ApplicationDescriptionToken.o $(_builddir)IshikoADL_ApplicationDescriptionTokenizer.o $(_builddir)IshikoADL_ErrorCategory.o
 	$(RANLIB) $@
 
 $(_builddir)IshikoADL_ApplicationDescription.o: ../../src/ApplicationDescription.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I../../include/Ishiko/Platform/ADL -std=c++11 ../../src/ApplicationDescription.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I../../include/Ishiko/Platform/ADL -std=c++11 ../../src/ApplicationDescription.cpp
 
 $(_builddir)IshikoADL_ApplicationDescriptionParser.o: ../../src/ApplicationDescriptionParser.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I../../include/Ishiko/Platform/ADL -std=c++11 ../../src/ApplicationDescriptionParser.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I../../include/Ishiko/Platform/ADL -std=c++11 ../../src/ApplicationDescriptionParser.cpp
+
+$(_builddir)IshikoADL_ApplicationDescriptionToken.o: ../../src/ApplicationDescriptionToken.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I../../include/Ishiko/Platform/ADL -std=c++11 ../../src/ApplicationDescriptionToken.cpp
 
 $(_builddir)IshikoADL_ApplicationDescriptionTokenizer.o: ../../src/ApplicationDescriptionTokenizer.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I../../include/Ishiko/Platform/ADL -std=c++11 ../../src/ApplicationDescriptionTokenizer.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I../../include/Ishiko/Platform/ADL -std=c++11 ../../src/ApplicationDescriptionTokenizer.cpp
+
+$(_builddir)IshikoADL_ErrorCategory.o: ../../src/ErrorCategory.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I$(ISHIKO_CPP_TEXT_ROOT)/include -I../../include/Ishiko/Platform/ADL -std=c++11 ../../src/ErrorCategory.cpp
 
 clean:
 	rm -f $(_builddir)*.o

@@ -1,6 +1,7 @@
 ishikopath = envvar("ISHIKO_CPP");
 import $(ishikopath)/errors/include/Ishiko/Errors.bkl;
 import $(ishikopath)/filesystem/include/Ishiko/FileSystem.bkl;
+import $(ishikopath)/text/include/Ishiko/Text.bkl;
 import $(ishikopath)/third-party-glue/include/Ishiko/ThirdParty/Boost.bkl;
 
 toolsets = gnu vs2017;
@@ -8,7 +9,7 @@ toolsets = gnu vs2017;
 gnu.makefile = ../gnumake/GNUmakefile;
 vs2017.solutionfile = ../vc15/IshikoADL.sln;
 
-library IshikoADL : IshikoFileSystem, IshikoErrors, Boost
+library IshikoADL : IshikoFileSystem, IshikoText, IshikoErrors, Boost
 {
     archs = x86 x86_64;
 
@@ -35,7 +36,9 @@ library IshikoADL : IshikoFileSystem, IshikoErrors, Boost
         ../../include/Ishiko/Platform/ADL.h
         ../../include/Ishiko/Platform/ADL/ApplicationDescription.h
         ../../include/Ishiko/Platform/ADL/ApplicationDescriptionParser.h
+        ../../include/Ishiko/Platform/ADL/ApplicationDescriptionToken.h
         ../../include/Ishiko/Platform/ADL/ApplicationDescriptionTokenizer.h
+        ../../include/Ishiko/Platform/ADL/ErrorCategory.h
         ../../include/Ishiko/Platform/ADL/linkoptions.h
     }
 
@@ -43,6 +46,8 @@ library IshikoADL : IshikoFileSystem, IshikoErrors, Boost
     {
         ../../src/ApplicationDescription.cpp
         ../../src/ApplicationDescriptionParser.cpp
+        ../../src/ApplicationDescriptionToken.cpp
         ../../src/ApplicationDescriptionTokenizer.cpp
+        ../../src/ErrorCategory.cpp
     }
 }
