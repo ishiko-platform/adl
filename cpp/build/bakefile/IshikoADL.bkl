@@ -35,6 +35,7 @@ library IshikoADL : IshikoFileSystem, IshikoErrors, Boost
         ../../include/Ishiko/Platform/ADL.h
         ../../include/Ishiko/Platform/ADL/ApplicationDescription.h
         ../../include/Ishiko/Platform/ADL/ApplicationDescriptionParser.h
+        ../../include/Ishiko/Platform/ADL/ApplicationDescriptionTokenizer.h
         ../../include/Ishiko/Platform/ADL/linkoptions.h
     }
 
@@ -42,5 +43,6 @@ library IshikoADL : IshikoFileSystem, IshikoErrors, Boost
     {
         ../../src/ApplicationDescription.cpp
         ../../src/ApplicationDescriptionParser.cpp
+        ../../src/ApplicationDescriptionTokenizer.cpp
     }
 }

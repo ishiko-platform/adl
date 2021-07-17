@@ -26,6 +26,9 @@
     <ClInclude Include="..\..\include\Ishiko\Platform\ADL\ApplicationDescriptionParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\Ishiko\Platform\ADL\ApplicationDescriptionTokenizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\Ishiko\Platform\ADL\linkoptions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -35,6 +38,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\ApplicationDescriptionParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\ApplicationDescriptionTokenizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

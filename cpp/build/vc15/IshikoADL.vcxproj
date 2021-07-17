@@ -152,11 +152,13 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\ApplicationDescription.cpp" />
     <ClCompile Include="..\..\src\ApplicationDescriptionParser.cpp" />
+    <ClCompile Include="..\..\src\ApplicationDescriptionTokenizer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Ishiko\Platform\ADL.h" />
     <ClInclude Include="..\..\include\Ishiko\Platform\ADL\ApplicationDescription.h" />
     <ClInclude Include="..\..\include\Ishiko\Platform\ADL\ApplicationDescriptionParser.h" />
+    <ClInclude Include="..\..\include\Ishiko\Platform\ADL\ApplicationDescriptionTokenizer.h" />
     <ClInclude Include="..\..\include\Ishiko\Platform\ADL\linkoptions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -80,8 +80,8 @@ ISHIKO_CPP_FILESYSTEM_ROOT ?= $(ISHIKO_CPP)/filesystem
 
 all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoADL-d,IshikoADL).a
 
-../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoADL-d,IshikoADL).a: $(_builddir)IshikoADL_ApplicationDescription.o $(_builddir)IshikoADL_ApplicationDescriptionParser.o
-	$(AR) rc $@ $(_builddir)IshikoADL_ApplicationDescription.o $(_builddir)IshikoADL_ApplicationDescriptionParser.o
+../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoADL-d,IshikoADL).a: $(_builddir)IshikoADL_ApplicationDescription.o $(_builddir)IshikoADL_ApplicationDescriptionParser.o $(_builddir)IshikoADL_ApplicationDescriptionTokenizer.o
+	$(AR) rc $@ $(_builddir)IshikoADL_ApplicationDescription.o $(_builddir)IshikoADL_ApplicationDescriptionParser.o $(_builddir)IshikoADL_ApplicationDescriptionTokenizer.o
 	$(RANLIB) $@
 
 $(_builddir)IshikoADL_ApplicationDescription.o: ../../src/ApplicationDescription.cpp
@@ -89,6 +89,9 @@ $(_builddir)IshikoADL_ApplicationDescription.o: ../../src/ApplicationDescription
 
 $(_builddir)IshikoADL_ApplicationDescriptionParser.o: ../../src/ApplicationDescriptionParser.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I../../include/Ishiko/Platform/ADL -std=c++11 ../../src/ApplicationDescriptionParser.cpp
+
+$(_builddir)IshikoADL_ApplicationDescriptionTokenizer.o: ../../src/ApplicationDescriptionTokenizer.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I$(ISHIKO_CPP_ERRORS_ROOT)/include -I$(ISHIKO_CPP_PLATFORM_ROOT)/include -I$(ISHIKO_CPP_BOOST_ROOT)/include -I$(ISHIKO_CPP_FILESYSTEM_ROOT)/include -I../../include/Ishiko/Platform/ADL -std=c++11 ../../src/ApplicationDescriptionTokenizer.cpp
 
 clean:
 	rm -f $(_builddir)*.o
