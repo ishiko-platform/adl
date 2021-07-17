@@ -20,13 +20,15 @@ public:
     enum Type
     {
         invalid,
-        keyword
+        keyword,
+        eof
     };
 
     ApplicationDescriptionToken(Type type, const std::string& value);
 
     Type type() const;
     bool isKeyword() const;
+    bool isEOF() const;
 
     const std::string& value() const;
 

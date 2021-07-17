@@ -26,6 +26,8 @@ public:
 
 private:
     FileSystem::TextFile m_file;
+    std::string m_currentLine;
+    std::string::iterator m_currentLineIt;
 };
 
 }

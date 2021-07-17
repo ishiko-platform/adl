@@ -16,6 +16,7 @@ ApplicationDescriptionTests::ApplicationDescriptionTests(const TestNumber& numbe
 {
     append<HeapAllocationErrorsTest>("Constructor test 1", ConstructorTest1);
     append<HeapAllocationErrorsTest>("CreateFromFile test 1", CreateFromFileTest1);
+    append<HeapAllocationErrorsTest>("CreateFromFile test 2", CreateFromFileTest2);
 }
 
 void ApplicationDescriptionTests::ConstructorTest1(Test& test)
@@ -28,7 +29,18 @@ void ApplicationDescriptionTests::ConstructorTest1(Test& test)
 
 void ApplicationDescriptionTests::CreateFromFileTest1(Test& test)
 {
-    boost::filesystem::path inputPath(test.environment().getTestDataDirectory() / "TestApplication1.yml");
+    boost::filesystem::path inputPath(test.environment().getTestDataDirectory() / "doesnotexist");
+
+    Error error;
+    ApplicationDescription applicationDescription = ApplicationDescription::CreateFromFile(inputPath.string(), error);
+
+    ISHTF_FAIL_IF_NOT(error);
+    ISHTF_PASS();
+}
+
+void ApplicationDescriptionTests::CreateFromFileTest2(Test& test)
+{
+    boost::filesystem::path inputPath(test.environment().getTestDataDirectory() / "TestApplication1.ikpadl");
 
     Error error;
     ApplicationDescription applicationDescription = ApplicationDescription::CreateFromFile(inputPath.string(), error);

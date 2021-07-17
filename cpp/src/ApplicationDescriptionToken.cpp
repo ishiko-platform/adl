@@ -26,6 +26,11 @@ bool ApplicationDescriptionToken::isKeyword() const
     return (m_type == keyword);
 }
 
+bool ApplicationDescriptionToken::isEOF() const
+{
+    return (m_type == eof);
+}
+
 const std::string& ApplicationDescriptionToken::value() const
 {
     return m_value;
