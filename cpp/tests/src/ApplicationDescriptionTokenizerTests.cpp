@@ -17,6 +17,7 @@ ApplicationDescriptionTokenizerTests::ApplicationDescriptionTokenizerTests(const
 {
     append<HeapAllocationErrorsTest>("Constructor test 1", ConstructorTest1);
     append<HeapAllocationErrorsTest>("open test 1", OpenTest1);
+    append<HeapAllocationErrorsTest>("readNextToken test 1", ReadNextTokenTest1);
 }
 
 void ApplicationDescriptionTokenizerTests::ConstructorTest1(Test& test)
@@ -36,5 +37,23 @@ void ApplicationDescriptionTokenizerTests::OpenTest1(Test& test)
     tokenizer.open(inputPath, error);
 
     ISHTF_FAIL_IF(error);
+    ISHTF_PASS();
+}
+
+void ApplicationDescriptionTokenizerTests::ReadNextTokenTest1(Test& test)
+{
+    boost::filesystem::path inputPath = test.environment().getTestDataPath("TestApplication1.ikpadl");
+
+    Error error;
+    ApplicationDescriptionTokenizer tokenizer;
+    tokenizer.open(inputPath, error);
+
+    ISHTF_ABORT_IF(error);
+
+    ApplicationDescriptionToken token = tokenizer.readNextToken(error);
+
+    ISHTF_FAIL_IF(error);
+    ISHTF_FAIL_IF_NEQ(token.type(), ApplicationDescriptionToken::keyword);
+    ISHTF_FAIL_IF_NEQ(token.value(), "app");
     ISHTF_PASS();
 }

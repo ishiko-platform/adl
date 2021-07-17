@@ -21,7 +21,7 @@ ApplicationDescription ApplicationDescription::CreateFromFile(const std::string&
 {
     ApplicationDescriptionParser parser;
     parser.open(path, error);
-    return parser.parseApplicationDescription();
+    return parser.parseApplicationDescription(error);
 }
 
 const std::string& ApplicationDescription::applicationName() const

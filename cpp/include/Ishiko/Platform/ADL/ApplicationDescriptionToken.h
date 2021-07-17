@@ -7,6 +7,8 @@
 #ifndef _ISHIKO_PLATFORM_ADL_CPP_APPLICATIONDESCRIPTIONTOKEN_H_
 #define _ISHIKO_PLATFORM_ADL_CPP_APPLICATIONDESCRIPTIONTOKEN_H_
 
+#include <string>
+
 namespace Ishiko
 {
 namespace Platform
@@ -14,6 +16,23 @@ namespace Platform
 
 class ApplicationDescriptionToken
 {
+public:
+    enum Type
+    {
+        invalid,
+        keyword
+    };
+
+    ApplicationDescriptionToken(Type type, const std::string& value);
+
+    Type type() const;
+    bool isKeyword() const;
+
+    const std::string& value() const;
+
+private:
+    Type m_type;
+    std::string m_value;
 };
 
 }

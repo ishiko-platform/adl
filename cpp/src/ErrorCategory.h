@@ -17,7 +17,7 @@ namespace Platform
 class ErrorCategory : public Ishiko::ErrorCategory
 {
 public:
-    enum ErrorValues
+    enum ErrorValue
     {
         generic = -1
     };
@@ -30,8 +30,8 @@ private:
     ErrorCategory() noexcept = default;
 };
 
-void Fail(Error& error, ErrorCategory::ErrorValues value) noexcept;
-void Fail(Error& error, ErrorCategory::ErrorValues value, const std::string& message, const char* file,
+void Fail(Error& error, ErrorCategory::ErrorValue value) noexcept;
+void Fail(Error& error, ErrorCategory::ErrorValue value, const std::string& message, const char* file,
     int line) noexcept;
 
 }

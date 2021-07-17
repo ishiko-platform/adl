@@ -5,6 +5,8 @@
 */
 
 #include "ApplicationDescriptionParser.h"
+#include "ApplicationDescriptionToken.h"
+#include "ErrorCategory.h"
 
 namespace Ishiko
 {
@@ -13,11 +15,27 @@ namespace Platform
     
 void ApplicationDescriptionParser::open(const boost::filesystem::path& filename, Error& error)
 {
-    m_file.open(filename.string(), error);
+    m_tokenizer.open(filename.string(), error);
 }
 
-ApplicationDescription ApplicationDescriptionParser::parseApplicationDescription()
+ApplicationDescription ApplicationDescriptionParser::parseApplicationDescription(Error& error)
 {
+    ApplicationDescriptionToken token = m_tokenizer.readNextToken(error);
+    if (token.isKeyword())
+    {
+        if (token.value() == "app")
+        {
+        }
+        else
+        {
+            Fail(error, ErrorCategory::generic);
+        }
+    }
+    else
+    {
+        Fail(error, ErrorCategory::generic);
+    }
+
     return ApplicationDescription("");
 }
 

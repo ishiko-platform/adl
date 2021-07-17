@@ -22,12 +22,12 @@ const char* ErrorCategory::name() const noexcept
     return "Ishiko::Platform::ErrorCategory";
 }
 
-void Fail(Error& error, ErrorCategory::ErrorValues value) noexcept
+void Fail(Error& error, ErrorCategory::ErrorValue value) noexcept
 {
     error.fail(value, ErrorCategory::Get());
 }
 
-void Fail(Error& error, ErrorCategory::ErrorValues value, const std::string& message, const char* file,
+void Fail(Error& error, ErrorCategory::ErrorValue value, const std::string& message, const char* file,
     int line) noexcept
 {
     error.fail(value, ErrorCategory::Get(), message, file, line);

@@ -8,9 +8,9 @@
 #define _ISHIKO_PLATFORM_ADL_CPP_APPLICATIONDESCRIPTIONPARSER_H_
 
 #include "ApplicationDescription.h"
+#include "ApplicationDescriptionTokenizer.h"
 #include <boost/filesystem.hpp>
 #include <Ishiko/Errors.h>
-#include <Ishiko/FileSystem.h>
 #include <string>
 
 namespace Ishiko
@@ -23,10 +23,10 @@ class ApplicationDescriptionParser
 public:
     void open(const boost::filesystem::path& filename, Error& error);
 
-    ApplicationDescription parseApplicationDescription();
+    ApplicationDescription parseApplicationDescription(Error& error);
 
 private:
-    FileSystem::TextFile m_file;
+    ApplicationDescriptionTokenizer m_tokenizer;
 };
 
 }
