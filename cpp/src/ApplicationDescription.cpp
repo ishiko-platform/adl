@@ -5,6 +5,7 @@
 */
 
 #include "ApplicationDescription.h"
+#include "ApplicationDescriptionParser.h"
 
 namespace Ishiko
 {
@@ -16,10 +17,11 @@ ApplicationDescription::ApplicationDescription(const std::string& applicatioName
 {
 }
 
-ApplicationDescription ApplicationDescription::CreateFromFile(const std::string& path)
+ApplicationDescription ApplicationDescription::CreateFromFile(const std::string& path, Error& error)
 {
-    ApplicationDescription result;
-    return result;
+    ApplicationDescriptionParser parser;
+    parser.open(path, error);
+    return parser.parseApplicationDescription(error);
 }
 
 const std::string& ApplicationDescription::applicationName() const

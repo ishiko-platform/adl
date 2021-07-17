@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: ishiko/gcc-ishiko-cpp:0.2.1
+      - image: ishiko/gcc-ishiko-cpp:0.2.2
     steps:
       - run: 
           name: "Set ISHIKO_PLATFORM environment variable and create workspace directory"
@@ -17,7 +17,7 @@ jobs:
           command: cd /projects/ishiko/platform/adl/cpp/tests/build/gnumake && make
       - run:
           name: Run the tests
-          command: cd /projects/ishiko/platform/adl/cpp/tests/build/gnumake && ./IshikoErrorsTests
+          command: cd /projects/ishiko/platform/adl/cpp/tests/build/gnumake && ./IshikoADLTests
 workflows:
   version: 2
   continuous_build:

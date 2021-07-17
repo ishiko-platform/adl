@@ -8,5 +8,13 @@ template IshikoADL
 {
     includedirs += $(ISHIKO_PLATFORM_ADL_ROOT)/cpp/include;
 
-    libdirs += $(ISHIKO_PLATFORM_ADL_ROOT)/cpp/lib/$(arch);
+    if ($(toolset) == gnu)
+    {
+        libdirs += $(ISHIKO_PLATFORM_ADL_ROOT)/cpp/lib;
+    }
+
+    if ($(toolset) != gnu)
+    {
+        libdirs += $(ISHIKO_PLATFORM_ADL_ROOT)/cpp/lib/$(arch);
+    }
 }
