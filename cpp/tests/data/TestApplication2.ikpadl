@@ -1,0 +1,9 @@
+app TestApplication2
+{
+    name = "Test Application 2";
+
+    func PrintHelloWorld
+    {
+        short-description = "Prints \"Hello world!\" on the screen";
+    }
+}

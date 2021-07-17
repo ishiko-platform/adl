@@ -4,7 +4,10 @@
     See https://github.com/ishiko-platform/adl/blob/main/LICENSE.txt
 */
 
+#include "ApplicationDescriptionParserTests.h"
 #include "ApplicationDescriptionTests.h"
+#include "ApplicationDescriptionTokenizerTests.h"
+#include "Ishiko/Platform/ADL/linkoptions.h"
 #include <Ishiko/Tests.h>
 
 using namespace Ishiko::Tests;
@@ -16,6 +19,8 @@ int main(int argc, char* argv[])
     theTestHarness.environment().setTestDataDirectory("../../data");
 
     TestSequence& theTests = theTestHarness.tests();
+    theTests.append<ApplicationDescriptionTokenizerTests>();
+    theTests.append<ApplicationDescriptionParserTests>();
     theTests.append<ApplicationDescriptionTests>();
 
     return theTestHarness.run();
