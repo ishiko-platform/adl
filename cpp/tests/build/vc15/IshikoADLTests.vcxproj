@@ -152,10 +152,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\ApplicationDescriptionParserTests.cpp" />
     <ClCompile Include="..\..\src\ApplicationDescriptionTests.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\ApplicationDescriptionParserTests.h" />
     <ClInclude Include="..\..\src\ApplicationDescriptionTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -20,11 +20,13 @@ program IshikoADLTests : IshikoADL, IshikoTests
 
     headers
     {
+        ../../src/ApplicationDescriptionParserTests.h
         ../../src/ApplicationDescriptionTests.h
     }
 
     sources
     {
+        ../../src/ApplicationDescriptionParserTests.cpp
         ../../src/ApplicationDescriptionTests.cpp
         ../../src/main.cpp
     }
