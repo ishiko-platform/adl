@@ -1,0 +1,4 @@
+app TestApplication1
+{
+    name = "Test Application 1";
+}
